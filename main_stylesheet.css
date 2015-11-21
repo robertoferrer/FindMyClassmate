@@ -4,3 +4,21 @@ This is the main stylesheet
 body{
 
 }
+
+.jumbotron.custom-jumbotron{
+    background: #ffeaa0;
+}
+.navbar-default.custom-navbar{
+    background: #ed9406;
+}
+.navbar-default.custom-navbar .navbar-nav>li>a{
+    color:white;
+}
+.navbar-default.custom-navbar .navbar-brand:focus,
+.navbar-default.custom-navbar .navbar-brand:hover{
+    color: #e8e8e8;
+}
+.navbar-default.custom-navbar .navbar-brand,
+.navbar-default.custom-navbar .navbar-brand{
+    color:white;
+}
