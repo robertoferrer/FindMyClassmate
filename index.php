@@ -11,7 +11,10 @@ include "header.php";
 
 echo "Hello, World";
 ?>
-    <h1>HTML Markup</h1>
+    <div class="container">
+        <h1>HTML Markup</h1>
+    </div>
+
 <?php
 
-include "footer.php";
+    include "footer.php";

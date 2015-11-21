@@ -8,7 +8,9 @@
 ?>
     <footer>
         <div class="body-footer">
-            <p>This is a footer</p>
+            <div class="container">
+                <p>This is a footer</p>
+            </div>
         </div>
     </footer>
 </body>
