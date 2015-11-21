@@ -7,6 +7,7 @@
  */
 
 session_start();
+
 if(!isset($_SESSION['uid'])){
     $redirect_url='login.php';
     if(isset($_SERVER['HTTP_REFERER'])){
