@@ -9,11 +9,11 @@
 include "header.php";
 
 ?>
-    <div class="jumbotron">
+    <div class="jumbotron custom-jumbotron">
 
         <div class="container">
             <h1>Find My Classmates!</h1>
-            <div style="text-align: left;">
+            <div>
                 <img src="images/Logo.png" width="150">
             </div>
             <br>

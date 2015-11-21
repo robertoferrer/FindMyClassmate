@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Find My Classmate | <?php echo (isset($_SESSION['page_title']) ? $_SESSION['page_title'] : null); ?></title>
 
+    <link href="main_stylesheet.css" rel="stylesheet">
     <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.4.min.js"></script>
@@ -73,7 +75,7 @@
                             <?php
                         } else {
                             ?>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
                             <?php
                         }
                     ?>
