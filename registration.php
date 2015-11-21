@@ -7,9 +7,6 @@
  */
 include('header.php');
 
-
-
-
 ?>
 <form action="script_register.php" method="POST">
     <input type="text" name="fname" aria-required="true" />
