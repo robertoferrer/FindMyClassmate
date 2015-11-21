@@ -63,7 +63,7 @@
                         if(isset($user)){
                             ?>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li>Hello, <?php echo $_SESSION['fname']; ?></li>
                                     <li role="separator" class="divider"></li>
@@ -74,7 +74,7 @@
                             <?php
                         } else {
                             ?>
-                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                            <li><a href="login.php"><i class="fa fa-user"></i> Login</a></li>
                             <?php
                         }
                     ?>
