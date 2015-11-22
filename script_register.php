@@ -47,6 +47,7 @@ if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['password'])&&is
     }
 }
 else{
+    var_dump($_POST);
     die('The form should be completely filled<br />');
 }
 ?>

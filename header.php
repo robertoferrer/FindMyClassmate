@@ -48,9 +48,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li><a href="myCourses.php">My Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Friends</a></li>
+                    <li><a href="mycourses.php">My Courses</a></li>
+                    <li><a href="calendar.php">Calendar</a></li>
+                    <li><a href="friends.php">Friends</a></li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
