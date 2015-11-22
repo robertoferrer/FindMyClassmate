@@ -8,7 +8,6 @@
 
 
 include('script_db_connect.php');
-mysql_select_db(ramen);
 if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
     $email = $_POST['email'];
@@ -19,7 +18,6 @@ if(isset($_POST['password'])&&isset($_POST['email'])){
         $row = mysql_fetch_array($result);
         $db_password = $row['pw_hash'];
         if (password_verify($password, $db_password)) {
-        }
             $_SESSION['fname'] = $row['fname'];
             $_SESSION['lname'] = $row['lname'];
             $_SESSION['email'] = $row['email'];
