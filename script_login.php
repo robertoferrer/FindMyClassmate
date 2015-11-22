@@ -12,9 +12,8 @@ if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
     $email = $_POST['email'];
     $sanitized_email = mysql_real_escape_string($email);
-    $sql = "SELECT * FROM WHERE `email`='$sanitized_email' AND `pw_hash`='$sanitized_pw_hash')";
-    if(mysql_query($sql)) {
-        $result = mysql_query("SELECT * FROM 'users' WHERE 'email' = '$sanitized_email' LIMIT 1");
+    $sql = "SELECT * FROM WHERE `email`='$sanitized_email') LIMIT 1";
+    if($result = mysql_query($sql)) {
         $row = mysql_fetch_array($result);
         $db_password = $row['pw_hash'];
         if (password_verify($password, $db_password)) {
