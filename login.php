@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     <div class="col-sm-6 col-sm-offset-3">
         <h1>Login</h1>
         <div class="login-box">
-            <form class="form-horizontal" action="" method="post">
+            <form class="form-horizontal" action="script_login.php" method="post">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
