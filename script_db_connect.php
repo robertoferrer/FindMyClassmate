@@ -6,7 +6,6 @@
  * Time: 8:10 PM
  */
 
-
 $link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'eatramen');
 if (!$link) {
     die('Could not connect: ' . mysql_error());
