@@ -34,6 +34,18 @@ include "header.php";
                     </thead>
                     <tbody>
                     <?php
+                    $sanitized_uid = (int) $_SESSION['uid'];
+                    $result = mysql_query("SELECT * FROM `courses` INNER JOIN `registration` ON `courses`.`id`=`registration`.`course_id` WHERE `registration`.`user_id`='$sanitized_uid'");
+                    while($row = mysql_fetch_array($result)){
+                        echo('<tr>');
+                        echo('<td>'.htmlentities($row['title']).'</td>');
+                        echo('<td>'.htmlentities($row['days']).'</td>');
+                        echo('<td>'.htmlentities($row['crn']).'</td>');
+                        echo('<td></td>');
+                        echo('</tr>');
+                    }
+                    ?>
+                    <?php
                     include_once "functions.php";
                     $_SESSION["uid"] = isset($_SESSION["uid"]) ? $_SESSION["uid"] : 1;
                     $courses = getMyCourses($_SESSION['uid']);
