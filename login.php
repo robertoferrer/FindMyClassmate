@@ -7,10 +7,7 @@
  */
     include "header.php";
 ?>
-<br />
-<br />
-<br />
-<br />
+
 <div class="container">
     <div class="col-sm-6 col-sm-offset-3">
         <div class="login-box">
