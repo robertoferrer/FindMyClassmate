@@ -80,3 +80,31 @@ input[type="button"],input[type="submit"]{
     border-radius: 20px;
     padding: 20px;
 }
+
+.schedule-for-days{
+    border:1px solid black;
+    border-radius:10px;
+}
+.schedule-for-days:after{
+    clear: both;
+}
+.schedule-for-days .day{
+    background: #dedede;
+    box-shadow: 1px 0px 3px 1px #0c0c0c;
+    border: 2px solid #949494;
+    font-weight: bold;
+    display:inline-block;
+    float: left;
+    padding:7px 10px;
+}
+.schedule-for-days .day:first-child{
+    border-radius:10px 0px 0px 10px;
+}
+.schedule-for-days .day:last-child{
+    border-radius:0px 10px 10px 0px;
+}
+.schedule-for-days .day.active{
+    background: #3e8f3e;
+    border-color: #276127;
+    color:white;
+}
