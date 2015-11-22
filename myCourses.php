@@ -25,7 +25,8 @@ include "header.php";
                     </thead>
                     <tbody>
                     <?php
-                    $courses = isset($_SESSION['courses']) ? $_SESSION['courses'] : array();
+                    include_once "functions.php";
+                    $courses = getMyCourses($_SESSION['uid']);
                     foreach($courses as $course){
                         ?>
                         <tr>
