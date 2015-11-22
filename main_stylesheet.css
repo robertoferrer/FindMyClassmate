@@ -32,3 +32,51 @@ body{
     background: #d87f2d;
 
 }
+
+
+select,input,textarea{
+    height:35px;
+    padding:5px;
+    margin:10px;
+    font-size:15px;
+    background-color:white;
+    border-style:solid;
+    border-color:#999999;
+    border-width:1px;
+    border-radius:3px;
+    outline-style:none;
+    box-shadow:inset 0px 1px 5px -3px black;
+}
+select:focus,input:focus,textarea:focus{
+    border-color:black;
+    box-shadow:inset 0px 1px 5px -2px black;
+}
+input[type="button"],input[type="submit"]{
+    border-color:black;
+    border-style:solid;
+    background-color:#CCCCCC;
+    text-shadow:0px 1px 0px #FFFFFF;
+}
+
+.button-inactive{
+    background-color:#CCCCCC;
+    box-shadow:inset 0px 0px 0px 0px black;
+    background: -webkit-linear-gradient(#FFFFFF,#AAAAAA); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FFFFFF,#AAAAAA); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FFFFFF,#AAAAAA); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FFFFFF,#AAAAAA); /* Standard syntax (must be last) */
+}
+.button-active{
+    box-shadow:inset 0px 0px 2px -1px black;
+    background-color:#AAAAAA;
+    background: -webkit-linear-gradient(#AAAAAA,#FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#AAAAAA,#FFFFFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#AAAAAA,#FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#AAAAAA,#FFFFFF); /* Standard syntax (must be last) */
+}
+
+.login-box{
+    border: 3px solid orange;
+    border-radius: 20px;
+    padding: 20px;
+}
