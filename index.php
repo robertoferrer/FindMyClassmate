@@ -31,11 +31,10 @@ include "header.php";
             <div class="form-group">
                 <label for="inptFirstName" class="col-sm-2 control-label">First Name</label>
                 <div class="col-sm-10">
-                    <input type="text" name="fname" class="form-control" id="inptFirstName" placeholder="First Name">
+                    <input type="text" name="fname" class="form-control" id="inptFirstName" placeholder="First Name" style="width:200px;" />
+                    <input type="" name="lname" aria-required="true" placeholder="Last Name" style="width:200px;" />
                 </div>
             </div>
-            <br />
-            <input type="" name="lname" aria-required="true" />
             <br />
             <input type="text" name="email" aria-required="true" />
             <br />
