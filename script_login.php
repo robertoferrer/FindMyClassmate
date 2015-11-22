@@ -12,7 +12,7 @@ if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
     $email = $_POST['email'];
     $sanitized_email = mysql_real_escape_string($email);
-    $sql = "SELECT * FROM WHERE `email`='$sanitized_email'";
+    $sql = "SELECT * FROM `users` WHERE `email`='$sanitized_email'";
     if($result = mysql_query($sql)) {
         $row = mysql_fetch_array($result);
         $db_password = $row['pw_hash'];
