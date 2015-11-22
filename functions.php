@@ -7,12 +7,19 @@
  */
 //include "script_db_connect.php";
 
-function getMyCourses($id){
+function connection(){
     $mysqli = new mysqli("findmyclassmatesnet.domaincommysql.com", "ramen", "eatramen", "ramen");
     if ($mysqli->connect_errno) {
-        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+//        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        return null;
     }
+    return $mysqli;
+}
+
+function getMyCourses($id){
+
 //    echo "Connected successfully: ".$mysqli->host_info . "\n";
+    $mysqli = connection();
 
     if ($stmt = $mysqli->prepare("SELECT * FROM courses,users WHERE users.uid = ? AND users.uid = courses.")) {
         /* bind parameters for markers */
