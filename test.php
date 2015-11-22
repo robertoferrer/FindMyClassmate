@@ -7,7 +7,9 @@
  */
 
 require('script_db_connect.php');
-require('script_session_handler.php');
+//require('script_session_handler.php');
 
-echo('You are logged in<br />');
+//echo('You are logged in<br />');
+session_start();
+$_SESSION['uid'] = 1;
 ?>
