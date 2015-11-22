@@ -10,7 +10,7 @@ include_once "functions.php";
 $function = $_POST['function'];
 
 switch($function){
-    case "getCourses":
-        return getCourses();
+    case "getDepartments":
+        return getDepartments();
         break;
 }

@@ -98,11 +98,10 @@ include "header.php";
             });
 
             $('.btn-add-course').click(function(){
-                var userId = <?php echo $user[''] ?>;
                 $.ajax({
                     url:"controller.php",
                     type:"POST",
-                    data: {"function":"addCourseToUser","userId":userId}
+                    data: {"function":"getDepartments","userId":userId}
                 })
             });
 
