@@ -9,9 +9,11 @@
 require('script_db_connect.php');
 
 $result = mysql_query("SELECT * FROM 'courses' LIMIT 30");
+$i = 0;
 while($row = mysql_fetch_array($result)){
-    var_dump($row);
-    echo('<br /><br />');
+    //var_dump($row);
+    $i++;
+    echo($i.'<br /><br />');
 }
 
 /*
