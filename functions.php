@@ -8,11 +8,7 @@
 //include "script_db_connect.php";
 
 function connection(){
-    $db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen');
-    if(!$db_link){
-        die('Could not connect: ' . mysql_error());
-    }
-    mysql_select_db("ramen");
+    include('script_db_connect.php');
 }
 
 function pdoConnection(){
