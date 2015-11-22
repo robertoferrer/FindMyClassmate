@@ -28,9 +28,9 @@ include "header.php";
                         ?>
                     </option>
                     <?php
-                    if($result = mysql_query($sql = "SELECT DISTINCT `department` FROM `courses`;")){
+                    if($result = mysql_query("SELECT DISTINCT `department` FROM `courses`;")){
                         echo(mysql_num_rows($result));
-                        while($row = mysql_fetch_arrray($result)){
+                        while($row = mysql_fetch_array($result)){
                             echo('<option>'.htmlentities($row['department']).'</option>');
                         }
                     }
