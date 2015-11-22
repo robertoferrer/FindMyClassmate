@@ -9,7 +9,7 @@
 require('script_session_handler.php');
 require('script_db_connect.php');
 
-
+include('header.php');
 
 
 
