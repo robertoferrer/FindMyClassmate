@@ -80,7 +80,7 @@ function logout(){
 
 function getDepartments(){
     connection();
-    $sql = "SELECT DISTINCT department from courses;";
+    $sql = "SELECT DISTINCT `department` FROM `courses`;";
     if(mysql_query($sql)) {
         $result = mysql_query($sql);
         $row = mysql_fetch_array($result);
