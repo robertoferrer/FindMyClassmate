@@ -6,7 +6,7 @@
  * Time: 5:19 PM
  */
 
-
+session_start();
 include('script_db_connect.php');
 if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
