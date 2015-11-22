@@ -13,7 +13,6 @@ $db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ram
 if(!$db_link){
     die('Could not connect: ' . mysql_error());
 }
-echo 'Connected successfully';
 mysql_select_db(ramen);
 
 /*
