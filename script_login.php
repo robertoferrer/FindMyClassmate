@@ -27,6 +27,7 @@ if(isset($_POST['password'])&&isset($_POST['email'])){
                 $_SESSION['phone'] = $row['phone'];
             }
             $_SESSION['uid'] = $row['id'];
+            var_dump($_SESSION);
             //var_dump($row);
             $redirect = 'home.php';
             header('Location: ' . $redirect);
