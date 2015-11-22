@@ -8,7 +8,7 @@
 
 require('script_db_connect.php');
 
-$result = mysql_query("SELECT * FROM 'courses' LIMIT 30") or die(mysql_error());
+$result = mysql_query("SELECT * FROM `courses` LIMIT 30") or die(mysql_error());
 $i = 0;
 while($row = mysql_fetch_array($result)){
     //var_dump($row);
