@@ -12,7 +12,7 @@ if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
     $email = $_POST['email'];
     $sanitized_email = mysql_real_escape_string($email);
-    $sql = "SELECT * FROM WHERE `email`='$sanitized_email' AND `pw_has`='$sanitized_pw_hash')";
+    $sql = "SELECT * FROM WHERE `email`='$sanitized_email' AND `pw_hash`='$sanitized_pw_hash')";
     if(mysql_query($sql)) {
         $result = mysql_query("SELECT * FROM 'users' WHERE 'email' = '$sanitized_email' LIMIT 1");
         $row = mysql_fetch_array($result);
@@ -31,6 +31,9 @@ if(isset($_POST['password'])&&isset($_POST['email'])){
         else {
             die('passwords don\'t match');
         }
+    }
+    else{
+        die(mysql_error());
     }
 }
 else {
