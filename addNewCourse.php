@@ -75,11 +75,17 @@ include "header.php";
 
     <script>
         $(document).ready(function() {
-            var table = $('#courses-table').dataTable();
+            var table = $('#courses-table').dataTable({
+                "order": [[ 0, "desc" ]],
+            });
 
             $('.btn-add-course').click(function(){
-                var number = $(this).attr('data-classmates');
-                $('.classmates-list[data-classmates="'+number+'"]').toggle("slow");
+                var userId = <?php echo $user[''] ?>;
+                $.ajax({
+                    url:"controller.php",
+                    type:"POST",
+                    data: {"function":"addCourseToUser","userId":}
+                })
             });
 
         } );
