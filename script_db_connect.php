@@ -15,7 +15,6 @@ if(!$db_link){
 }
 echo 'Connected successfully';
 mysql_select_db(ramen);
-?>
 
 /*
 $db_link = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen', 'ramen');
