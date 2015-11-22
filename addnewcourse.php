@@ -29,7 +29,7 @@ include "header.php";
                     </option>
                     <?php
                     if($result = mysql_query($sql = "SELECT DISTINCT `department` FROM `courses`;")){
-                        echo(mysql_num_rows($result));
+                        'mysql_num_rows($result));
                         while($row = mysql_fetch_arrray($result)){
                             echo('<option>'.htmlentities($row['description']).'</option>');
                         }
@@ -40,6 +40,7 @@ include "header.php";
                     ?>
                 </select>
             </form>
+            <!--
             <div class="">
                 <table id="courses-table" class="zebra">
                     <thead>
