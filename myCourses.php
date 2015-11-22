@@ -11,7 +11,11 @@ include "header.php";
     <div class="container">
 
         <h1>My courses</h1>
+        <div id="my-courses">
+            <div class="">
 
+            </div>
+        </div>
     </div>
 
 <?php
