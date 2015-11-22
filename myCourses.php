@@ -36,7 +36,6 @@ include "header.php";
                     <?php
                     $sanitized_uid = (int) $_SESSION['uid'];
                     if($result = mysql_query("SELECT * FROM `courses` INNER JOIN `registration` ON `courses`.`id`=`registration`.`course_id` WHERE `registration`.`user_id`='$sanitized_uid'")){
-                        echo("SELECT * FROM `courses` INNER JOIN `registration` ON `courses`.`id`=`registration`.`course_id` WHERE `registration`.`user_id`='$sanitized_uid'");
                         while($row = mysql_fetch_array($result)){
                             echo('<tr>');
                             echo('<td>'.htmlentities($row['title']).'</td>');
