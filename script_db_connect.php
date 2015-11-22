@@ -6,11 +6,10 @@
  * Time: 8:10 PM
  */
 
-$link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'eatramen');
-if (!$link) {
-    die('Could not connect: ' . mysql_error());
+$db_link = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen', 'eatramen');
+if(!$db_link){
+    error_log(mysqli_connect_error());
 }
 echo 'Connected successfully';
-mysql_select_db('ramen');
 
 ?>
