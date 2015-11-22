@@ -98,7 +98,8 @@ include "header.php";
             autoPlay: 3000, //Set AutoPlay to 3 seconds
 
             navigation : false, // Show next and prev buttons
-            slideSpeed : 300,
+
+            slideSpeed : 5,
             paginationSpeed : 400,
             singleItem:true,
             transitionStyle: "fade"
