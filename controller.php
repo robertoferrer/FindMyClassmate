@@ -13,4 +13,7 @@ switch($function){
     case "getDepartments":
         return getDepartments();
         break;
+    case "getCourseByDepartment":
+        return json_encode(getCourseByDepartment($_POST['department']));
+        break;
 }

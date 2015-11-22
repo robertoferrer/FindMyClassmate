@@ -83,3 +83,13 @@ function getDepartments(){
         return $result;
     }
 }
+
+function getCourseByDepartment($department){
+    connection();
+    $sql = "SELECT * FROM `courses` where `department` = $department";
+    if(mysql_query($sql)) {
+        $result = mysql_query($sql);
+        $row = mysql_fetch_array($result);
+        return $row;
+    }
+}

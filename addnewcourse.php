@@ -15,23 +15,14 @@ include "header.php";
         </h1>
         <h3>Your school is: <strong><?php echo "UTSA"; ?></strong></h3>
         <div id="courses">
-            <form id="department-select">
-                <p>Select a Department to see courses</p>
-                <select name="department">
-                    <option>
-                        <?php
-                        include_once "functions.php";
-                        $departments = getDepartments();
-                        foreach($departments as $department){
-                            echo '<option name="'.$department.'">'.$department.'</option>';
-                        }
-                        ?>
-                    </option>
+            <form>
+                <p>Select a Department to see courses...</p>
+                <select name="department" id="department-select">
+                    <option value="">-Select-</option>
                     <?php
                     if($result = mysql_query("SELECT DISTINCT `department` FROM `courses`;")) {
-                        echo(mysql_num_rows($result));
                         while($row = mysql_fetch_array($result)){
-                            echo('<option>'.htmlentities($row['department']).'</option>');
+                            echo('<option value="'.$row['department'].'">'.htmlentities($row['department']).'</option>');
                         }
                     }
                     else{
@@ -103,21 +94,26 @@ include "header.php";
 //            var table = $('#courses-table').dataTable({
 //                "order": [[ 0, "desc" ]],
 //            });
-
-            $('#department-select').submit(function(e){
-                e.preventDefault();
-
-            });
-
-            $('.btn-add-course').click(function(){
+            $('#department-select').change(function(){
+                var department = $('#department-select').val();
                 $.ajax({
                     url:"controller.php",
                     type:"POST",
-                    data: {"function":"getDepartments","userId":userId}
-                })
+                    data: {"function":"getCourseByDepartment","department":department},
+                    success:function(response){
+                        var json = JSON.parse(response);
+                        console.log(json.count);
+                        console.log("SSSSS");
+                    },
+                    error: function(err){
+                        console.log("Error "+err);
+                    }
+                });
             });
 
+
         } );
+
     </script>
 
 
