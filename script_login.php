@@ -7,6 +7,9 @@
  */
 
 session_start();
+if(!isset($_SESSION)){
+    echo('The session is not set<br />');
+}
 include('script_db_connect.php');
 if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
