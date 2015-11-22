@@ -14,7 +14,6 @@ if(!$db_link){
     die('Could not connect: ' . mysql_error());
 }
 mysql_select_db(ramen);
-
 /*
 $db_link = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen', 'ramen');
 if(!$db_link){
