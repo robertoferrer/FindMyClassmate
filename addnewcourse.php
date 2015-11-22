@@ -5,6 +5,7 @@
  * Date: 11/22/15
  * Time: 4:41 AM
  */
+include('script_db_connect.php');
 include "script_session_handler.php";
 include "header.php";
 ?>
