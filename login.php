@@ -10,7 +10,7 @@
 <div class="container">
     <div class="col-sm-6 col-sm-offset-3">
         <div class="login-box">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
