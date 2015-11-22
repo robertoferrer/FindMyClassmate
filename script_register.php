@@ -7,11 +7,7 @@
  */
 
 
-$db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen');
-if(!$db_link){
-    die('Could not connect: ' . mysql_error());
-}
-mysql_select_db(ramen);
+include('script_db_connect.php');
 if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['Password'])&&isset($_POST['Password2'])&&isset($_POST['Email'])){
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -26,7 +22,7 @@ if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['Password'])&&is
         $sanitized_email = mysql_real_escape_string($email);
         $sanitized_phone = (int) $phone;
         $sanitized_pw_hash = mysql_real_escape_string($pw_hash);
-        $sql = "INSERT INTO 'users' ('fname','lname','pw_hash','email','phone') VALUES ('$sanitized_fname','$sanitized_lname','$sanitized_pw_hash','$sanitized_email','$sanitized_phone')";
+        $sql = "INSERT INTO `users` (`fname`,`lname`,`pw_hash`,`email`,`phone`) VALUES ('$sanitized_fname','$sanitized_lname','$sanitized_pw_hash','$sanitized_email','$sanitized_phone')";
         if(mysql_query($sql)){
             $result = mysql_query("SELECT * FROM 'users' WHERE 'email' = '$sanitized_email' AND 'pw_hash' = '$sanitized_pw_hash'");
             $row = mysql_fetch_array($result);
