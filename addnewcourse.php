@@ -31,7 +31,7 @@ include "header.php";
                     if($result = mysql_query($sql = "SELECT DISTINCT `department` FROM `courses`;")){
                         echo(mysql_num_rows($result));
                         while($row = mysql_fetch_arrray($result)){
-                            echo('<option>'.htmlentities($row['description']).'</option>');
+                            echo('<option>'.htmlentities($row['department']).'</option>');
                         }
                     }
                     else{
