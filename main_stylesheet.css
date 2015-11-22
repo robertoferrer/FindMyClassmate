@@ -32,3 +32,10 @@ body{
     background: #d87f2d;
 
 }
+
+.login-box{
+    border: 3px solid #eea236;
+    border-radius: 20px;
+    padding:15px;
+
+}
