@@ -12,13 +12,13 @@ if(!$db_link){
     die('Could not connect: ' . mysql_error());
 }
 mysql_select_db(ramen);
-if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['password'])&&isset($_POST['password_confirm'])&&isset($_POST['email'])){
+if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['Password'])&&isset($_POST['Password2'])&&isset($_POST['Email'])){
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $password = $_POST['password'];
-    $password_confirm = $_POST['password_confirm'];
+    $email = $_POST['Email'];
+    $phone = $_POST['Phone'];
+    $password = $_POST['Password'];
+    $password_confirm = $_POST['Password2'];
     if($password === $password_confirm){
         $pw_hash = password_hash($password, PASSWORD_BCRYPT);
         $sanitized_fname = mysql_real_escape_string($fname);
