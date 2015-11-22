@@ -26,6 +26,12 @@ include "header.php";
                         }
                         ?>
                     </option>
+                    <?php
+                    $result = mysql_query($sql = "SELECT DISTINCT `department` FROM `courses`;");
+                    while($row = mysql_fetch_arrray($result)){
+                        echo('<option>'.htmlentities($row['description']).'</option>');
+                    }
+                    ?>
                 </select>
             </form>
             <div class="">
