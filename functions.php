@@ -8,12 +8,12 @@
 //include "script_db_connect.php";
 
 function connection(){
-    $mysqli = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen', 'ramen');
-    if ($mysqli->connect_errno) {
-//        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-        return null;
+    $db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen');
+    if(!$db_link){
+        die('Could not connect: ' . mysql_error());
     }
-    return $mysqli;
+    echo 'Connected successfully';
+    mysql_select_db(ramen);
 }
 
 function pdoConnection(){
