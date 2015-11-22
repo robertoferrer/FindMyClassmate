@@ -9,7 +9,7 @@
 session_start();
 
 if(!isset($_SESSION['uid'])){
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     $redirect_url='login.php';
     if(isset($_SERVER['HTTP_REFERER'])){
         $redirect_url.='?target='.urlencode($_SERVER['HTTP_REFERER']);
