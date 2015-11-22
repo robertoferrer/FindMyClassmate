@@ -22,3 +22,89 @@ body{
 .navbar-default.custom-navbar .navbar-brand{
     color:white;
 }
+
+.navbar-default.custom-navbar .navbar-nav>.active>a,
+.navbar-default.custom-navbar .navbar-nav>.active>a:focus,
+.navbar-default.custom-navbar .navbar-nav>.active>a:hover{
+    background: #ed6f39;
+}
+.navbar-default.custom-navbar .navbar-nav>.active>a{
+    background: #d87f2d;
+
+}
+
+
+select,input,textarea{
+    height:35px;
+    padding:5px;
+    margin:10px;
+    font-size:15px;
+    background-color:white;
+    border-style:solid;
+    border-color:#999999;
+    border-width:1px;
+    border-radius:3px;
+    outline-style:none;
+    box-shadow:inset 0px 1px 5px -3px black;
+}
+select:focus,input:focus,textarea:focus{
+    border-color:black;
+    box-shadow:inset 0px 1px 5px -2px black;
+}
+input[type="button"],input[type="submit"]{
+    border-color:black;
+    border-style:solid;
+    background-color:#CCCCCC;
+    text-shadow:0px 1px 0px #FFFFFF;
+}
+
+.button-inactive{
+    background-color:#CCCCCC;
+    box-shadow:inset 0px 0px 0px 0px black;
+    background: -webkit-linear-gradient(#FFFFFF,#AAAAAA); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FFFFFF,#AAAAAA); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FFFFFF,#AAAAAA); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FFFFFF,#AAAAAA); /* Standard syntax (must be last) */
+}
+.button-active{
+    box-shadow:inset 0px 0px 2px -1px black;
+    background-color:#AAAAAA;
+    background: -webkit-linear-gradient(#AAAAAA,#FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#AAAAAA,#FFFFFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#AAAAAA,#FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#AAAAAA,#FFFFFF); /* Standard syntax (must be last) */
+}
+
+.login-box{
+    border: 3px solid orange;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.schedule-for-days{
+    border:1px solid black;
+    border-radius:10px;
+}
+.schedule-for-days:after{
+    clear: both;
+}
+.schedule-for-days .day{
+    background: #dedede;
+    box-shadow: 1px 0px 3px 1px #0c0c0c;
+    border: 2px solid #949494;
+    font-weight: bold;
+    display:inline-block;
+    float: left;
+    padding:7px 10px;
+}
+.schedule-for-days .day:first-child{
+    border-radius:10px 0px 0px 10px;
+}
+.schedule-for-days .day:last-child{
+    border-radius:0px 10px 10px 0px;
+}
+.schedule-for-days .day.active{
+    background: #3e8f3e;
+    border-color: #276127;
+    color:white;
+}

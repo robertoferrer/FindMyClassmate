@@ -8,8 +8,14 @@
 include('header.php');
 
 ?>
-<form action="script_register.php" method="POST">
+<form action="script_regster.php" method="POST">
     <input type="text" name="fname" aria-required="true" />
+    <div class="form-group">
+        <label for="inptFirstName" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+            <input type="text" name="fname" class="form-control" id="inptFirstName" placeholder="First Name">
+        </div>
+    </div>
     <br />
     <input type="" name="lname" aria-required="true" />
     <br />
