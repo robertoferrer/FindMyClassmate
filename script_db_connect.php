@@ -6,11 +6,9 @@
  * Time: 8:10 PM
  */
 
-$link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'eatramen');
-if (!$link) {
-    die('Could not connect: ' . mysql_error());
+$mysqli = new mysqli("findmyclassmatesnet.domaincommysql.com", "ramen", "eatramen", "ramen");
+if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-echo 'Connected successfully';
-mysql_select_db('ramen');
+echo "Connected successfully: ".$mysqli->host_info . "\n";
 
-?>
