@@ -15,7 +15,10 @@ include "header.php";
                 <img src="images/Banner%203.jpg">
             </div>
             <div class="img-center">
-                <img src="images/Banner%203.jpg">
+                <img src="images/Banner%203%20%233.jpg">
+            </div>
+            <div class="img-center">
+                <img src="images/Banner%203%20%232.jpg">
             </div>
         </div>
 
@@ -94,9 +97,11 @@ include "header.php";
 
             autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-            items : 4,
-            itemsDesktop : [1199,3],
-            itemsDesktopSmall : [979,3]
+            navigation : false, // Show next and prev buttons
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem:true,
+            transitionStyle: "fade"
 
         });
 
