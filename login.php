@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-default">Sign in</button>
-                        Don't have an account? <a href="registration.php" style="float:right;">Sign up</a>
+                        <a href="registration.php" style="float:right;">Sign up</a>
                     </div>
                 </div>
             </form>

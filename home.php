@@ -6,7 +6,7 @@
  * Time: 5:30 PM
  */
 
-$redirect = 'myclass.php';
+$redirect = 'mycourses.php';
 header('Location: '.$redirect);
 
 ?>
