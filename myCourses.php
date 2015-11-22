@@ -35,8 +35,8 @@ include "header.php";
                     <tbody>
                     <?php
                     include_once "functions.php";
-                    $_SESSION["uid"] = isset($_SESSION["uid"]) ? $_SESSION["uid"] : 1;
-                    $courses = getMyCourses($_SESSION["uid"]);
+                    //$_SESSION["uid"] = isset($_SESSION["uid"]) ? $_SESSION["uid"] : 1;
+                    $courses = getMyCourses($_SESSION['uid']);
 
                     foreach($courses as $course){
                         ?>
