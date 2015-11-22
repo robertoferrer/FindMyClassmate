@@ -15,8 +15,7 @@ body{
     text-align: center;
 }
 .navbar-brand>img.logo{
-    display: inline; /*not*/
-    width: 33px;
+    display: inline; width: 33px;
 }
 .navbar-default.custom-navbar{
     background: #ed9406;
