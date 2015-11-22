@@ -7,6 +7,10 @@
  */
 
 session_start();
+$db_link = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen', 'eatramen');
+if(!$db_link){
+    error_log(mysqli_connect_error());
+}
 if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['password'])&&isset($_POST['password_confirm'])&&isset($_POST['email'])){
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -16,15 +20,15 @@ if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['password'])&&is
     $password_confirm = $_POST['password_confirm'];
     if($password === $password_confirm){
         $pw_hash = password_hash($password, PASSWORD_BCRYPT);
-        $sanitized_fname = mysql_real_escape_string($fname);
-        $sanitized_lname = mysql_real_escape_string($lname);
-        $sanitized_email = mysql_real_escape_string($email);
+        $sanitized_fname = mysqli_real_escape_string($db_link, $fname);
+        $sanitized_lname = mysqli_real_escape_string($db_link, $lname);
+        $sanitized_email = mysqli_real_escape_string($db_link, $email);
         $sanitized_phone = (int) $phone;
-        $sanitized_pw_hash = mysql_real_escape_string($pw_hash);
+        $sanitized_pw_hash = mysqli_real_escape_string($db_link, $pw_hash);
         $sql = "INSERT INTO 'users' ('fname','lname','pw_hash','email','phone') VALUES ('$sanitized_fname','$sanitized_lname','$sanitized_pw_hash','$sanitized_email','$sanitized_phone')";
-        if(mysql_query($sql)){
-            $result = mysql_query("SELECT * FROM 'users' WHERE 'email' = '$sanitized_email' AND 'pw_hash' = '$sanitized_pw_hash'");
-            $row = mysql_fetch_array($result);
+        if(mysqli_query($db_link, $sql)){
+            $result = mysqli_query($db_link, "SELECT * FROM 'users' WHERE 'email' = '$sanitized_email' AND 'pw_hash' = '$sanitized_pw_hash'");
+            $row = mysqli_fetch_array($result);
             $_SESSION['fname'] = $row['fname'];
             $_SESSION['lname'] = $row['lname'];
             $_SESSION['email'] = $row['email'];
