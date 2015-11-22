@@ -6,7 +6,6 @@
  * Time: 6:38 PM
  */
 include "header.php";
-
 ?>
     <div class="container">
 
@@ -84,6 +83,8 @@ include "header.php";
                     <div class="day active">F</div>
                     <div class="day">S</div>
                 </div>
+                <button class="btn btn-primary btn-show-classmates" data-classmates="1">Show classmates</button>
+                <div class="classmates-list" data-classmates="1"></div>
             </div>
         </div>
     </div>
@@ -92,10 +93,10 @@ include "header.php";
     $(document).ready(function() {
         var table = $('#courses-table').dataTable();
 
-        $('#button').click( function () {
-            var hidden = table.fnGetHiddenNodes();
-            alert( hidden.length +' nodes were returned' );
-        } );
+        $('.btn-show-classmates').click(function(){
+            var number = $(this).attr('data-classmates');
+            $('.classmates-list[data-classmates="'+number+'"]').show("slow");
+        });
     } );
 </script>
 <?php

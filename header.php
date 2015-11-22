@@ -41,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"> <img src="images/Logo.png" class="logo">Find My Classmates</a>
+            <a class="navbar-brand" href="index.php"> <img src="images/Logo.png" class="logo" style="display: inline; width: 50px; margin:-10px 10px 0px 0px;">Find My Classmates</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
