@@ -11,7 +11,7 @@ include "header.php";
 ?>
     <div class="jumbotron custom-jumbotron">
         <div class="img-center">
-            <img src="images/Banner%203.png">
+            <img src="images/Banner%203.jpg">
         </div>
 <!--        <div class="container">-->
 <!--            <h1>Find My Classmates!</h1>-->
