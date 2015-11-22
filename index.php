@@ -10,9 +10,18 @@ include "header.php";
 
 ?>
     <div class="jumbotron custom-jumbotron">
-        <div class="img-center">
-            <img src="images/Banner%203.jpg">
+        <div id="owl-home">
+            <div class="img-center">
+                <img src="images/Banner%203.jpg">
+            </div>
+            <div class="img-center">
+                <img src="images/Banner%203%20%233.jpg">
+            </div>
+            <div class="img-center">
+                <img src="images/Banner%203%20%232.jpg">
+            </div>
         </div>
+
 <!--        <div class="container">-->
 <!--            <h1>Find My Classmates!</h1>-->
 <!--            <div>-->
@@ -81,6 +90,23 @@ include "header.php";
 
     </div>
 
+<script>
+    $(document).ready(function() {
+
+        $("#owl-home").owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+            navigation : false, // Show next and prev buttons
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem:true,
+            transitionStyle: "fade"
+
+        });
+
+    });
+</script>
 <?php
 
 include "footer.php";
