@@ -40,6 +40,10 @@ if(isset($_POST['fname'])&&isset($_POST['lname'])&&isset($_POST['Password'])&&is
             $redirect = 'home.php';
             header('Location: '.$redirect);
         }
+        else{
+            echo("query failed<br />");
+            die(mysql_error());
+        }
     }
     else{
         //passwords don't match
