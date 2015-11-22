@@ -93,15 +93,13 @@ input[type="button"],input[type="submit"]{
 }
 
 .schedule-for-days{
-    border:1px solid black;
-    border-radius:10px;
 }
 .schedule-for-days:after{
     clear: both;
 }
 .schedule-for-days .day{
     background: #dedede;
-    box-shadow: 1px 0px 3px 1px #0c0c0c;
+    /*box-shadow: 1px 0px 3px 1px #0c0c0c;*/
     border: 2px solid #949494;
     font-weight: bold;
     display:inline-block;
@@ -119,3 +117,7 @@ input[type="button"],input[type="submit"]{
     border-color: #276127;
     color:white;
 }
+.classmates-list{
+    display: none;
+}
+

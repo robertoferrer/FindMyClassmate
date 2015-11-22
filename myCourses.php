@@ -5,15 +5,24 @@
  * Date: 11/21/15
  * Time: 6:38 PM
  */
+include "script_session_handler.php";
 include "header.php";
 ?>
     <div class="container">
 
-        <h1>My courses</h1>
+        <h1>
+            My courses
+            <a href="addNewCourse.php">
+                <button type="button" class="btn btn-success btn-lg ">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new
+                </button>
+            </a>
+
+        </h1>
         <h3>Your school is: <strong><?php echo "UTSA"; ?></strong></h3>
         <div id="my-courses">
             <div class="">
-                <table id="courses-table">
+                <table id="courses-table" class="zebra">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -25,67 +34,84 @@ include "header.php";
                     <tbody>
                     <?php
                     include_once "functions.php";
-                    $_SESSION["uid"]=1;
-                    $courses = getMyCourses($_SESSION['uid']);
+                    $_SESSION["uid"] = isset($_SESSION["uid"]) ? $_SESSION["uid"] : 1;
+                    $courses = getMyCourses($_SESSION["uid"]);
+
                     foreach($courses as $course){
                         ?>
                         <tr>
-                            <td><?php echo $course['name']; ?></td>
-                        </tr>
-                        <tr>
-                            <?php
-                                if(strcmp($course['days_of_week'],'MWF')==0){
-                                    ?>
-                                    <td>
-                                        <div class="schedule-for-days">
-                                            <div class="day active">M</div>
-                                            <div class="day">T</div>
-                                            <div class="day active">W</div>
-                                            <div class="day">R</div>
-                                            <div class="day active">F</div>
-                                            <div class="day">S</div>
-                                        </div>
-                                    </td>
+                            <td><?php echo $course['title']; ?></td>
+                            <td>
+                                <?php
+                                $letters = array('M','T','W','R','F','S');
+                                $arrayOfLetters = str_split($course['days']);
+                                ?>
+                                <div class="schedule-for-days">
                                     <?php
-                                } else if(strcmp($course['days_of_week'],'TR')==0) {
+                                        $counter = 0;
+                                        $class="";
+                                        foreach($letters as $letter){
+                                            if(array_key_exists($counter,$arrayOfLetters) && $arrayOfLetters[$counter] == $letter){
+                                                $class="active";
+                                                $counter++;
+                                            } else
+                                                $class="";
+                                            ?>
+                                            <div class="day <?php echo $class; ?>"><?php echo $letter; ?></div>
+                                            <?php
+                                        }
                                     ?>
-                                    <td>
-                                        <div class="schedule-for-days">
-                                            <div class="day">M</div>
-                                            <div class="day active">T</div>
-                                            <div class="day">W</div>
-                                            <div class="day active">R</div>
-                                            <div class="day">F</div>
-                                            <div class="day">S</div>
-                                        </div>
-                                    </td>
-                                    <?php
-                                } else{
-                                    echo "What?";
-                                }
-                            ?>
-                        </tr>
-                        <tr>
-                            <td><?php echo $course['crn']; ?></td>
-                        </tr>
-                        <tr>
-                            <button class="btn btn-primary btn-show-classmates">Show classmates</button>
+                                </div>
+                            </td>
+                            <td><?php echo isset($course['crn']) ? $course['crn'] : "Sorry" ; ?></td>
+
+                            <td>
+                                <?php
+                                $classmates = getClassmatesByCourse($course['courseId']);
+                                ?>
+                                <button class="btn btn-primary btn-show-classmates" type="button" data-classmates="<?php echo $course['courseId'] ?>">
+                                    Show classmates <span class="badge"><?php echo count($classmates) ?></span>
+                                </button>
+                                <div class="classmates-list" data-classmates="<?php echo $course['courseId'] ?>">
+                                    <ul>
+                                        <?php
+                                            foreach($classmates as $classmate){
+                                                ?>
+                                                <li>
+                                                    <p><?php echo $classmate["fname"]." ".$classmate["lname"];  ?></p>
+                                                </li>
+                                                <?php
+                                            }
+                                        ?>
+
+                                    </ul>
+                                </div>
+                            </td>
                         </tr>
                         <?php
                     }
                     ?>
                     </tbody>
                 </table>
-                <div class="schedule-for-days">
-                    <div class="day active">M</div>
-                    <div class="day">T</div>
-                    <div class="day active">W</div>
-                    <div class="day">R</div>
-                    <div class="day active">F</div>
-                    <div class="day">S</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="classmatesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="classmatesModalLabel">Modal title</h4>
                 </div>
-                <button class="btn btn-primary btn-show-classmates" data-classmates="1">Show classmates</button>
-                <div class="classmates-list" data-classmates="1"></div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
@@ -96,10 +122,12 @@ include "header.php";
 
         $('.btn-show-classmates').click(function(){
             var number = $(this).attr('data-classmates');
-            $('.classmates-list[data-classmates="'+number+'"]').show("slow");
+            $('.classmates-list[data-classmates="'+number+'"]').toggle("slow");
         });
     } );
 </script>
+
+
 <?php
 
 include "footer.php";

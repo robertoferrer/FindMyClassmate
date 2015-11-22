@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +48,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li ><a href="#">Home</a></li>
                     <li><a href="myCourses.php">My Courses</a></li>
                     <li><a href="#">Calendar</a></li>
                     <li><a href="#">Friends</a></li>
@@ -72,10 +68,10 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li>Hello, <?php echo $_SESSION['fname']; ?></li>
+                                    <li><a href="#">Hello, <?php echo $_SESSION['fname']; ?></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">My Profile</a></li>
-                                    <li><a href="#">Logout</a></li>
+                                    <li><a href="myProfile.php">My Profile</a></li>
+                                    <li><a href="script_logout.php">Logout</a></li>
                                 </ul>
                             </li>
                             <?php

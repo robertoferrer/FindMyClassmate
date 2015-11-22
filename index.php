@@ -22,17 +22,6 @@ include "header.php";
             </div>
         </div>
 
-<!--        <div class="container">-->
-<!--            <h1>Find My Classmates!</h1>-->
-<!--            <div>-->
-<!--                <img src="images/Logo.png" width="150">-->
-<!--            </div>-->
-<!--            <br>-->
-<!--            <div>-->
-<!--                <button class="btn btn-primary btn-lg">Click Me</button>-->
-<!--            </div>-->
-<!--        </div>-->
-
     </div>
     <div class="container">
 
@@ -96,9 +85,7 @@ include "header.php";
         $("#owl-home").owlCarousel({
 
             autoPlay: 3000, //Set AutoPlay to 3 seconds
-
             navigation : false, // Show next and prev buttons
-
             slideSpeed : 5,
             paginationSpeed : 400,
             singleItem:true,
