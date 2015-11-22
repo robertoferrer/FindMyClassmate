@@ -10,6 +10,8 @@ $db_link = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ra
 if(!$db_link){
     error_log(mysqli_connect_error());
 }
-echo 'Connected successfully';
+else{
+    echo('Connected successfully');
+}
 
 ?>
