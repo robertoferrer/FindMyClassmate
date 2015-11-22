@@ -102,7 +102,7 @@ include "header.php";
                 $.ajax({
                     url:"controller.php",
                     type:"POST",
-                    data: {"function":"addCourseToUser","userId":}
+                    data: {"function":"addCourseToUser","userId":userId}
                 })
             });
 
