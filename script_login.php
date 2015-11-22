@@ -7,11 +7,7 @@
  */
 
 
-$db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen');
-if(!$db_link){
-    die('Could not connect: ' . mysql_error());
-}
-echo 'Connected successfully';
+include('script_db_connect.php');
 mysql_select_db(ramen);
 if(isset($_POST['password'])&&isset($_POST['email'])){
     $password = $_POST['password'];
