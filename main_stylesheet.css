@@ -8,6 +8,12 @@ body{
 .jumbotron.custom-jumbotron{
     background: #ffeaa0;
 }
+.img-center img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
 .navbar-default.custom-navbar{
     background: #ed9406;
 }

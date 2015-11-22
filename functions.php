@@ -5,21 +5,27 @@
  * Date: 11/21/15
  * Time: 8:13 PM
  */
-include "script_db_connect.php";
+//include "script_db_connect.php";
 
 function getMyCourses($id){
-
-    if(mysql_query($sql)) {
-        $result = mysql_query("SELECT * FROM 'users' WHERE 'email' = '$sanitized_email' AND 'pw_hash' = '$sanitized_pw_hash'");
-        $row = mysql_fetch_array($result);
-        $_SESSION['fname'] = $row['fname'];
-        $_SESSION['lname'] = $row['lname'];
-        $_SESSION['email'] = $row['email'];
-        if ($row['phone'] > 0) {
-            $_SESSION['phone'] = $row['phone'];
-        }
-        $_SESSION['uid'] = $row['uid'];
-        $redirect = 'home.php';
-        header('Location: ' . $redirect);
+    $mysqli = new mysqli("findmyclassmatesnet.domaincommysql.com", "ramen", "eatramen", "ramen");
+    if ($mysqli->connect_errno) {
+        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
+//    echo "Connected successfully: ".$mysqli->host_info . "\n";
+
+    if ($stmt = $mysqli->prepare("SELECT * FROM courses,users WHERE users.uid = ? AND users.uid = courses.")) {
+        /* bind parameters for markers */
+        $stmt->bind_param("s", $city);
+        /* execute query */
+        $stmt->execute();
+        /* bind result variables */
+        $stmt->bind_result($district);
+        /* fetch value */
+        $stmt->fetch();
+        printf("%s is in district %s\n", $city, $district);
+        /* close statement */
+        $stmt->close();
+    }
+    $mysqli->close();
 }
