@@ -7,6 +7,18 @@
  */
 
 
+
+
+<?php
+$db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', '*password*');
+if(!$db_link){
+    die('Could not connect: ' . mysql_error());
+}
+echo 'Connected successfully';
+mysql_select_db(ramen);
+?>
+
+/*
 $db_link = mysqli_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', 'ramen', 'ramen');
 if(!$db_link){
     echo('ouch<br />');
@@ -16,5 +28,6 @@ if(!$db_link){
 else{
     echo('Connected successfully');
 }
+*/
 
 ?>
