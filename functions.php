@@ -83,7 +83,7 @@ function getDepartments(){
     $sql = "SELECT DISTINCT `department` FROM `courses`;";
     if(mysql_query($sql)) {
         $result = mysql_query($sql);
-        $row = mysql_fetch_array($result);
-        return $row;
+        //$row = mysql_fetch_array($result);
+        return $result;
     }
 }
