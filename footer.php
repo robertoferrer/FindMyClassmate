@@ -8,8 +8,8 @@
 ?>
     <footer>
         <div class="body-footer">
-            <div class="container">
-                <p>This is a footer</p>
+            <div class="container" style="text-align: center">
+                All rights reserved. 2015
             </div>
         </div>
     </footer>

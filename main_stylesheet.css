@@ -121,3 +121,11 @@ input[type="button"],input[type="submit"]{
     display: none;
 }
 
+.body-footer {
+    margin-top:25px;
+    background: rgb(230, 230, 230);
+    font-weight:bold;
+    width: 100%;
+    padding:20px 15px;
+    box-shadow:0px 3px 8px rgb(150,150,150) inset;
+}

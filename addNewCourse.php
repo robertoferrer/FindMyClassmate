@@ -14,6 +14,20 @@ include "header.php";
         </h1>
         <h3>Your school is: <strong><?php echo "UTSA"; ?></strong></h3>
         <div id="courses">
+            <form id="department-select">
+                <p>Select a Department to see courses</p>
+                <select name="department">
+                    <option>
+                        <?php
+                        include_once "functions.php";
+                        $departments = getDepartments();
+                        foreach($departments as $department){
+                            echo '<option name="'.$department.'">'.$department.'</option>';
+                        }
+                        ?>
+                    </option>
+                </select>
+            </form>
             <div class="">
                 <table id="courses-table" class="zebra">
                     <thead>
@@ -26,7 +40,6 @@ include "header.php";
                     </thead>
                     <tbody>
                     <?php
-                    include_once "functions.php";
                     $courses = getCoursesForUser($_SESSION["uid"]);
 
                     foreach($courses as $course){
@@ -75,8 +88,13 @@ include "header.php";
 
     <script>
         $(document).ready(function() {
-            var table = $('#courses-table').dataTable({
-                "order": [[ 0, "desc" ]],
+//            var table = $('#courses-table').dataTable({
+//                "order": [[ 0, "desc" ]],
+//            });
+
+            $('#department-select').submit(function(e){
+                e.preventDefault();
+
             });
 
             $('.btn-add-course').click(function(){

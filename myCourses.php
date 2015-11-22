@@ -6,13 +6,14 @@
  * Time: 6:38 PM
  */
 include "script_session_handler.php";
+include_once "script_db_connect.php";
 include "header.php";
 ?>
     <div class="container">
 
         <h1>
             My courses
-            <a href="addNewCourse.php">
+            <a href="addnewcourse.php">
                 <button type="button" class="btn btn-success btn-lg ">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new
                 </button>

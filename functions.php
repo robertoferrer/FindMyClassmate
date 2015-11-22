@@ -12,8 +12,7 @@ function connection(){
     if(!$db_link){
         die('Could not connect: ' . mysql_error());
     }
-    echo 'Connected successfully';
-    mysql_select_db(ramen);
+    mysql_select_db("ramen");
 }
 
 function pdoConnection(){
@@ -25,7 +24,7 @@ function pdoConnection(){
 
 
 function getMyCourses($id){
-
+    connection();
     $result=null;
     $sql = "SELECT courses.title, courses.days, courses.crn, courses.id as courseId, users.id as userId FROM courses,users,registration WHERE users.id = :id AND users.id = registration.user_id AND courses.id = registration.course_id";
     $result = mysql_query($sql);
@@ -33,6 +32,7 @@ function getMyCourses($id){
 }
 
 function getClassmatesByCourse($course_id){
+    connection();
     $result=null;
     $sql = "SELECT courses.id as courseId, users.id as userId, users.fname as fname, users.lname as lname, email FROM courses,users,registration WHERE registration.user_id = users.id AND courses.id = registration.course_id AND courses.id = :id";
     $result = mysql_query($sql);
@@ -40,6 +40,7 @@ function getClassmatesByCourse($course_id){
 }
 
 function getCoursesForUser($user_id){
+    connection();
     $result=null;
     $sql = "SELECT courses.title, courses.days, courses.crn, courses.id as courseId FROM courses";
     $result = mysql_query($sql);
@@ -48,6 +49,7 @@ function getCoursesForUser($user_id){
 
 
 function login($email, $password){
+    connection();
     $result=null;
     $sql = "SELECT * FROM users WHERE email = :email";
     $result = mysql_query($sql);
@@ -74,4 +76,14 @@ function logout(){
     $_SESSION['email'] =  "";
     unset($_SESSION);
     session_destroy();
+}
+
+function getDepartments(){
+    connection();
+    $sql = "SELECT DISTINCT department from courses;";
+    if(mysql_query($sql)) {
+        $result = mysql_query($sql);
+        $row = mysql_fetch_array($result);
+        return $row;
+    }
 }
