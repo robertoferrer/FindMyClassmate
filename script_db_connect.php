@@ -9,7 +9,6 @@
 
 
 
-<?php
 $db_link = mysql_connect('findmyclassmatesnet.domaincommysql.com', 'ramen', '*password*');
 if(!$db_link){
     die('Could not connect: ' . mysql_error());
