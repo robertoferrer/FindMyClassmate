@@ -2,7 +2,7 @@
 This is the main stylesheet
 */
 body{
-    padding-top:60px;
+    padding-top:50px;
 }
 
 .jumbotron.custom-jumbotron{
@@ -15,7 +15,8 @@ body{
     text-align: center;
 }
 .navbar-brand>img.logo{
-    display: inline; width: 33px;
+    display: inline;
+    width: 33px;
 }
 .navbar-default.custom-navbar{
     background: #ed9406;
