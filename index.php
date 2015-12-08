@@ -25,7 +25,7 @@
 <?php
     include "header.php";
 ?>
-    <div class="jumbotron custom-jumbotron">
+    <div class="jumbotron custom-jumbotron" style="padding:0px;">
         <div id="owl-home">
             <div class="img-center">
                 <img src="images/Banner%203.jpg">
